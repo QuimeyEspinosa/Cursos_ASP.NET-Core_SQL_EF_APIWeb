@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Quimey\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Quimey\\.nuget\\packages"
+    ]
+  }
+}
