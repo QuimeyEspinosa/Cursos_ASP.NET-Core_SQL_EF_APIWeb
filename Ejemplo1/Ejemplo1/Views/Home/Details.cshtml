@@ -1,0 +1,37 @@
+﻿@model Ejemplo1.ViewModels.DetailsView
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h2>@Model.Titulo</h2>
+
+    <div>@Model.Producto.Descripcion</div>
+    <div>@Model.Producto.Precio</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+@*<header>
+    <h3>@ViewData["Cabecera"]</h3>
+    @{
+        var prod = ViewData["Producto"] as Ejemplo1.Models.Producto;
+    }
+</header>
+<div>
+    Nombre: @prod.Descripcion   Precio: @prod.Precio
+</div>
+<h3>Fuertemente tipado</h3>
+<div>
+    Nombre: @Model.Descripcion   Precio: @Model.Precio
+</div>*@
