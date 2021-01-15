@@ -39,16 +39,28 @@ namespace Ejemplo1
             }
 
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute(); //Utiliza HomeController por defecto
+            //app.UseMvcWithDefaultRoute(); //Utiliza HomeController como ruta por defecto
 
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            #region Comentarios
+
+            /*
+            //Definir nuestro propio enrutamiento
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Metodo Run");
             });
-
-
-
-            #region Comentarios
+            */
 
             /*
             DefaultFilesOptions archivosDefecto = new DefaultFilesOptions();

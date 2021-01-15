@@ -33,3 +33,7 @@ C:\Users\Quimey\source\repos\Ejemplo1\Ejemplo1\obj\Debug\net5.0\Razor\Views\Home
 C:\Users\Quimey\source\repos\Ejemplo1\Ejemplo1\obj\Debug\net5.0\Ejemplo1.RazorTargetAssemblyInfo.cs
 C:\Users\Quimey\source\repos\Ejemplo1\Ejemplo1\obj\Debug\net5.0\Ejemplo1.Views.pdb
 C:\Users\Quimey\source\repos\Ejemplo1\Ejemplo1\obj\Debug\net5.0\Ejemplo1.csproj.CopyComplete
+C:\Users\Quimey\source\repos\Ejemplo1\Ejemplo1\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Quimey\source\repos\Ejemplo1\Ejemplo1\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Quimey\source\repos\Ejemplo1\Ejemplo1\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Quimey\source\repos\Ejemplo1\Ejemplo1\bin\Debug\net5.0\libman.json

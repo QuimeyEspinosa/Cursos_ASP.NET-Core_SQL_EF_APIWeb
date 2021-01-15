@@ -17,7 +17,7 @@ namespace Ejemplo1.Controllers
             productoComercio = prodComercio;
         }
 
-        public ViewResult Index()
+        public ViewResult Index(int id)
         {
             List<Producto> productos = productoComercio.GetProductos();
 
@@ -29,7 +29,7 @@ namespace Ejemplo1.Controllers
             DetailsView details = new DetailsView();
 
             details.Producto = productoComercio.GetDatosProducto(2);
-            details.Titulo = "Lista Productos viewModel";
+            details.Titulo = "Detalles producto";
 
             return View(details);
         }

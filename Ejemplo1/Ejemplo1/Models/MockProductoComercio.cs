@@ -15,7 +15,8 @@ namespace Ejemplo1.Models
 
             productosMock.Add(new Producto() { Id = 1, Descripcion = "Cafe", Precio = 50f });
             productosMock.Add(new Producto() { Id = 2, Descripcion = "Medialuna", Precio = 20f });
-            productosMock.Add(new Producto() { Id = 3, Descripcion = "Chocolate", Precio = 2.2f });
+            productosMock.Add(new Producto() { Id = 3, Descripcion = "Brownie", Precio = 80f });
+            productosMock.Add(new Producto() { Id = 4, Descripcion = "Chocolate", Precio = 2.2f });
         }
 
         public Producto GetDatosProducto(int id)

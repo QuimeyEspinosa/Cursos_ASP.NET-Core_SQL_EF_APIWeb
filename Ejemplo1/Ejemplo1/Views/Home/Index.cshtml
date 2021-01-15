@@ -1,10 +1,27 @@
-﻿@model List<Ejemplo1.Models.Producto>
+﻿@model List<Producto>
 
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+@{
+    ViewBag.Title = "Índice producto";
+}
+
+
+<div class="card-deck">
+    @foreach (Producto prod in Model)
+    {
+        <div class="card-m3 m-2">
+            <div class="card-header text-center text-white">
+                <h3>@prod.Descripcion</h3>
+            </div>
+            <div class="card-footer text-center">
+                <a href="#" class="btn btn-primary">Ver</a>
+                <a href="#" class="btn btn-primary">Editar</a>
+                <a href="#" class="btn btn-danger">Borrar</a>
+            </div>
+        </div>
+    }
+</div>
+
+@*
     <table>
         <tr>
             <th>Id</th>
@@ -14,13 +31,12 @@
         <tr>
             @foreach (var item in Model)
             {
-            <tr>
+             <tr>
                 <td>@item.Id</td>
                 <td>@item.Descripcion</td>
                 <td>@item.Precio</td>
-            </tr>
+             </tr>
             }
-        </tr>
-        </table>
-    </body>
-</html>
+         </tr>
+    </table>
+*@
