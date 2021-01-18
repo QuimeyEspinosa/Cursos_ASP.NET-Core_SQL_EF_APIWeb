@@ -5,7 +5,8 @@
 
     //el operador de uso combinado de NULL ?? devuelve el valor del operando izquierdo si no es null;
     //caso contrario evalúa el operando derecho y devuelve su resultado
-    var rutaFoto = "~/images/" + (Model.Producto.RutaFoto ?? "cafe.jpg");
+    //var rutaFoto = "~/images/" + (Model.Producto.RutaFoto ?? "cafe.jpg");
+    var rutaFoto = "~/images/" + Model.Producto.RutaFoto;
 }
 
 <div class="text-center text-white">
@@ -19,7 +20,7 @@
             </div>
 
             <div class="card-body bg-dark text-center">
-                <img class="card-img-top imagen" src="@rutaFoto" asp-append-version="true" />
+                <img class="card-img-top" src="@rutaFoto" asp-append-version="true" />
                 
                 <h4>ID Producto: @Model.Producto.Id</h4>
                 <h4>Descripcion: @Model.Producto.Descripcion</h4>

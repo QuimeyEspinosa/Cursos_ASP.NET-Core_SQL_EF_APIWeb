@@ -144,7 +144,15 @@ namespace Ejemplo1.Controllers
             return nombreArchivo;
         }
 
+        public IActionResult Delete(Producto deleteProd)
+        {
+            if(ModelState.IsValid)
+            {
+                productoComercio.DeleteProducto(deleteProd.Id);
+            }
 
+            return RedirectToAction("index");
+        }
         #region Comentarios
 
         /*

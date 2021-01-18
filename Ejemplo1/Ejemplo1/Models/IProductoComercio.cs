@@ -10,9 +10,9 @@ namespace Ejemplo1.Models
         Producto GetDatosProducto(int id);
         List<Producto> GetProductos();
 
-        public Producto AddProducto(Producto newProd);
-        public Producto EditProducto(Producto editProd);
-        public Producto DeleteProducto(int id);
+        Producto AddProducto(Producto newProd);
+        Producto EditProducto(Producto editProd);
+        Producto DeleteProducto(int id);
 
     }
 }
