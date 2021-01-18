@@ -2,9 +2,13 @@
 
 @{
     ViewBag.Title = "Detalles producto";
+
+    //el operador de uso combinado de NULL ?? devuelve el valor del operando izquierdo si no es null;
+    //caso contrario evalúa el operando derecho y devuelve su resultado
+    var rutaFoto = "~/images/" + (Model.Producto.RutaFoto ?? "cafe.jpg");
 }
 
-<div class="sticky-top text-center text-white">
+<div class="text-center text-white">
     <h2>@Model.Titulo</h2>
 </div>
 <div class="row justify-content-center m-3 text-white">
@@ -13,14 +17,17 @@
             <div class="card-header text-center">
                 <h1>@Model.Producto.Descripcion</h1>
             </div>
+
             <div class="card-body bg-dark text-center">
+                <img class="card-img-top imagen" src="@rutaFoto" asp-append-version="true" />
+                
                 <h4>ID Producto: @Model.Producto.Id</h4>
                 <h4>Descripcion: @Model.Producto.Descripcion</h4>
                 <h4>Precio: $@Model.Producto.Precio</h4>
             </div>
             <div class="card-footer text-center">
-                <a href="#" class="btn btn-primary">Ver</a>
-                <a href="#" class="btn btn-primary">Editar</a>
+                <a asp-controller="home" asp-action="index" class="btn btn-primary">Volver</a>
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@Model.Producto.Id" class="btn btn-primary">Editar</a>
                 <a href="#" class="btn btn-danger">Borrar</a>
             </div>
         </div>

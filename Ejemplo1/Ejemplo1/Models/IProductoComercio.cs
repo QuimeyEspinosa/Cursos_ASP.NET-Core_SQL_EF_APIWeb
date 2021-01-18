@@ -8,7 +8,11 @@ namespace Ejemplo1.Models
     public interface IProductoComercio
     {
         Producto GetDatosProducto(int id);
-
         List<Producto> GetProductos();
+
+        public Producto AddProducto(Producto newProd);
+        public Producto EditProducto(Producto editProd);
+        public Producto DeleteProducto(int id);
+
     }
 }

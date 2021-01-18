@@ -1,0 +1,46 @@
+﻿@model CreateProductoModel
+@{
+    ViewBag.Title = "Nuevo Producto";
+}
+
+<form asp-controller="Home" asp-action="Create" method="post">
+    <div class="form-group row m-3">
+        <label asp-for="Descripcion" class="col-sm-2 col-form-label text-white"></label>
+        <div class="col-sm-10">
+            <input asp-for="Descripcion" class="form-control" placeholder="descripcion" />
+            <span asp-validation-for="Descripcion" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row m-3">
+        <label asp-for="Precio" class="col-sm-2 col-form-label text-white"></label>
+        <div class="col-sm-10">
+            <input asp-for="Precio" class="form-control" placeholder="precio" />
+            <span asp-validation-for="Precio" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row m-3">
+        <label asp-for="Foto" class="col-sm-2 col-form-label text-white"></label>
+        <div class="col-sm-10">
+            <div class="custom-file">
+                <input asp-for="Foto" class="form-control custom-file-input" />
+                <label class="custom-file-label">Selecciona una foto</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row m-3">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Nuevo</button>
+        </div>
+    </div>
+
+    @section Scripts{
+        <script>
+            $(document).ready(function () {
+                $('.custom-file-input').on("change", function () {
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).next('.custom-file-label').html(fileName);
+                });
+            });
+        </script>
+    }
+</form>

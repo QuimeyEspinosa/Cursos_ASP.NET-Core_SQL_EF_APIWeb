@@ -1,25 +1,34 @@
 ﻿@model List<Producto>
 
 @{
-    ViewBag.Title = "Índice producto";
+    ViewBag.Title = "Cafetería";
 }
 
 
 <div class="card-deck">
     @foreach (Producto prod in Model)
     {
-        <div class="card-m3 m-2">
+        var rutaFoto = "~/images/" + (prod.RutaFoto ?? "cafe.jpg");
+        <div class="card-m3 m-4">
             <div class="card-header text-center text-white">
                 <h3>@prod.Descripcion</h3>
             </div>
+            <img class="card-img-top imagen" src="@rutaFoto" asp-append-version="true" />
             <div class="card-footer text-center">
-                <a href="#" class="btn btn-primary">Ver</a>
-                <a href="#" class="btn btn-primary">Editar</a>
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@prod.Id" class="btn btn-primary">Ver</a>
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@prod.Id" class="btn btn-primary">Editar</a>
                 <a href="#" class="btn btn-danger">Borrar</a>
             </div>
         </div>
     }
 </div>
+
+
+
+
+
+
+
 
 @*
     <table>
