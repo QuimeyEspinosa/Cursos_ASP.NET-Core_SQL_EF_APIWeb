@@ -1,28 +1,30 @@
-﻿body {
-    background-color: #eee;
-    font-family: 'Century Gothic';
-}
-
-* {
+﻿* {
     margin: 0;
     padding: 0;
 }
 
+body {
+    background-color: #eee;
+    font-family: 'Century Gothic';
+}
+
+header {
+    margin-bottom: 48px;
+}
+
+/* barra de navegación */
 
 .navbar {
-    padding: 25px;
+    position: fixed;
+    background-color: #fff;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    box-shadow: rgba(0,0,0,0.1) 5px 5px 5px;
 }
 
     .navbar ul {
         list-style-type: none;
-        margin: 0px;
-        padding: 0px;
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        background-color: #eee;
-        box-shadow: rgba(0,0,0,0.1) 5px 5px 5px;
     }
 
     .navbar li {
@@ -42,23 +44,15 @@
                 color: #ffffff;
             }
 
-h4 {
-    text-align: left;
-    color: #045FB4;
-    margin: 10px;
-    padding: 5px;
-}
-
-p {
-    margin: 10px;
-    padding: 5px;
-}
+/* contenedores */
 
 .container {
-    width: 85%;
+    width: auto;
+    height: auto;
     max-width: 800px;
     margin: 0 auto;
     align-items: center;
+    padding: 25px;
 }
 
     .container ul {
@@ -71,3 +65,94 @@ p {
         max-width: 850px;
     }
 
+.header-container {
+    text-align: left;
+    color: #045FB4;
+    padding-bottom: 15px;
+}
+
+.text-container {
+    color: #045FB4;
+    text-align: center;
+}
+
+.form-container {
+    width: 60%;
+    height: 40%;
+    margin: 100px auto;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+form {
+    margin: 10px auto;
+    border-radius: 3px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+    form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #045FB4;
+    }
+
+    form label {
+        text-align: left;
+        color: #045FB4;
+    }
+
+input, textarea {
+    width: 100%;
+    padding: 7px;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 150px;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.btn-primary {
+    background-color: #045FB4;
+    width: 100%;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+    .btn-primary:hover {
+        background-color: #169bff;
+        color: #fff;
+    }
+
+.horarios-container {
+    text-align: center;
+    padding: 30px;
+}
+
+.box {
+    width: 100%;
+    height: auto;
+}
+
+/* pie de página */
+
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: #1d1d1d;
+    color: #fff;
+    bottom: 0;
+    position: relative;
+    align-items: center;
+}
+
+.copyright-text {
+    color: #045FB4;
+    text-align: center;
+    padding: 5px;
+}

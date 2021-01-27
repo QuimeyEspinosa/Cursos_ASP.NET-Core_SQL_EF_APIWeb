@@ -36,3 +36,6 @@ C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Conces
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\Home\AboutUs.cshtml.g.cs
+C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\Cars\Index.cshtml.g.cs
+C:\Users\Quimey\source\repos\Concesionario\Concesionario\bin\Debug\net5.0\libman.json
+C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\Home\ContactUs.cshtml.g.cs

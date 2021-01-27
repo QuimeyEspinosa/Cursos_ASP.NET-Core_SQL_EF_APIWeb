@@ -17,5 +17,10 @@ namespace Concesionario.Controllers
         {
             return View();
         }
+
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
     }
 }
