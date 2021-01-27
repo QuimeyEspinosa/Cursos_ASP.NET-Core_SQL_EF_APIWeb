@@ -27,7 +27,7 @@ namespace Concesionario
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseStaticFiles();                        
+            app.UseStaticFiles();
             
             app.UseMvc(routes =>
             {

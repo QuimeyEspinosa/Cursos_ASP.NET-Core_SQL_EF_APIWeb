@@ -6,6 +6,10 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Views\Cars\" />
+    <Folder Include="wwwroot\img\ford\" />
+    <Folder Include="wwwroot\img\chevrolet\" />
+    <Folder Include="wwwroot\img\peugeot\" />
   </ItemGroup>
 
 </Project>

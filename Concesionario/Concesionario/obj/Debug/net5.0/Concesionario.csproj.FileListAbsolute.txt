@@ -34,3 +34,5 @@ C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Conces
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Concesionario.Views.pdb
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Concesionario.csproj.CopyComplete
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\Home\AboutUs.cshtml.g.cs
