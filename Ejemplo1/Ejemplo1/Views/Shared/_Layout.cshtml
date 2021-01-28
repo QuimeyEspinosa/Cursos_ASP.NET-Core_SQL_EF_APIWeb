@@ -4,10 +4,10 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="~/css/main.css" rel="stylesheet" />
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
     <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/Main.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -27,6 +27,21 @@
     <div>
         @RenderBody()
     </div>
+    <footer class="mfooter-container">
+        <div class="horarios-container">
+            <h3>Horarios de atención</h3>
+            <p> Lunes a Viernes de 9:00hs a 18:30hs</p>
+            <p> Sábado Cerrado</p>
+            <p> Domingo Cerrado</p>
+        </div>
+        <div class="contacto-container">
+            <h3>Contacto</h3>
+            <h5>Escribinos por WhatsApp!</h5>
+            <h4> 15 0123-4567</h4>
+            <h5>Llamanos!</h5>
+            <h4> 011 4210-1234</h4>
+        </div>
+    </footer>
 
     @RenderSection("Scripts", required: false)
 </body>

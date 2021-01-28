@@ -1,4 +1,113 @@
-﻿.imagen{
+﻿body{
+    background-color: black;
+}
+
+.mcontainer{
+    width: 82%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.mfooter-container{
+    width: 100%;
     height: 200px;
-    width: 200px;
+    background-color: #000;
+    position: relative;
+    bottom: 0px;
+    padding: 40px 240px 40px 240px;
+}
+
+.horarios-container {
+    float: left;
+    padding: 30px;
+    color: #ff7d00;    
+}
+
+    .horarios-container p {
+        color: #fff;
+    }
+
+.contacto-container {
+    float: right;
+    padding: 30px;
+    color: #ff7d00;
+}
+
+.contacto-container h4{
+    color: #fff;
+}
+
+/* -------formulario--------*/
+
+.form-container {
+    width: 80%;
+    height: 40%;
+    margin: 10px auto;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+form {
+    margin: 10px auto;
+    border-radius: 3px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+    form h4 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #045FB4;
+    }
+
+    form label {
+        text-align: left;
+        color: #045FB4;
+    }
+
+    form input {
+        border-style: solid;
+    }
+
+        form input:focus {
+            outline: none;
+        }
+
+.form-message {
+    background-color: #F66060;
+    height: 20px;
+    margin: 5px;
+    padding: 15px;
+    border-radius: 3px;
+    text-align: center;
+    display: none;
+}
+
+.form-message-active {
+    display: block;
+}
+
+.input-correct {
+    border-color: #045FB4;
+}
+
+.input-incorrect {
+    border-color: #eb1e1e;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 7px;
+    box-sizing: border-box;
+    border: 1px;
+    border-radius: 3px;
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 150px;
+    max-width: 100%;
+    min-width: 100%;
+    border-style: solid;
+    border-color: #045FB4;
 }

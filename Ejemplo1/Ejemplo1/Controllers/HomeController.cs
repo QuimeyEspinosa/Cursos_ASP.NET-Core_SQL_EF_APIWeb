@@ -53,12 +53,12 @@ namespace Ejemplo1.Controllers
         [Route("Home/Create")]
         [HttpPost]
         public IActionResult Create(CreateProductoModel p)
-        {           
+        {
             if (ModelState.IsValid)
             {
                 string guidImagen = null;
 
-                if(p.Foto != null)
+                if (p.Foto != null)
                 {
                     string ficherosImagenes = Path.Combine(hosting.WebRootPath, "images");
                     guidImagen = Guid.NewGuid().ToString() + p.Foto.FileName;
@@ -97,17 +97,17 @@ namespace Ejemplo1.Controllers
 
         public IActionResult Edit(EditProductoModel editProducto)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 Producto prod = productoComercio.GetDatosProducto(editProducto.Id);
 
                 prod.Descripcion = editProducto.Descripcion;
                 prod.Precio = editProducto.Precio;
 
-                if(editProducto.Foto != null)
+                if (editProducto.Foto != null)
                 {
                     //Al subir una foto debe borrarse la anterior
-                    if(editProducto.RutaFotoExistente != null)
+                    if (editProducto.RutaFotoExistente != null)
                     {
                         string ruta = Path.Combine(hosting.WebRootPath, "images", editProducto.RutaFotoExistente);
                         System.IO.File.Delete(ruta);
@@ -135,10 +135,10 @@ namespace Ejemplo1.Controllers
                 nombreArchivo = Guid.NewGuid().ToString() + prod.Foto.FileName;
                 string ruta = Path.Combine(ficherosImagenes, nombreArchivo);
 
-                using(var fileStream = new FileStream(ruta, FileMode.Create))
+                using (var fileStream = new FileStream(ruta, FileMode.Create))
                 {
                     prod.Foto.CopyTo(fileStream);
-                }                
+                }
             }
 
             return nombreArchivo;
@@ -146,13 +146,16 @@ namespace Ejemplo1.Controllers
 
         public IActionResult Delete(Producto deleteProd)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 productoComercio.DeleteProducto(deleteProd.Id);
             }
 
             return RedirectToAction("index");
         }
+
+
+
         #region Comentarios
 
         /*
