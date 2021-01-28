@@ -1,9 +1,33 @@
-﻿<div>
-    <ul>
-        <li>
-            <img class="box" src="~/img/concesionario/concesionario-2.jpg">
-        </li>
-    </ul>
+﻿<!--slider-->
+<div class="slider">
+    <div class="slider-container">
+        <!--Botón imagen previa-->
+        <button aria-label="Anterior" class="slider-prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <!--Lista de imágenes-->
+        <div class="slider-list">
+            <div class="slider-element">
+                <img src="~/img/concesionario/concesionario-3.jpg" />
+            </div>
+
+            <div class="slider-element">
+                <img src="~/img/concesionario/concesionario-4.jpg" />
+            </div>
+
+            <div class="slider-element">
+                <img src="~/img/concesionario/concesionario-5.jpg" />
+            </div>
+        </div>
+
+        <!--Botón imagen siguiente-->
+        <button aria-label="Siguiente" class="slider-next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <div role="tablist" class="slider-indicators"></div>
 </div>
 <div class="container">
     <h2 class="header-container">¿Quiénes somos?</h2>

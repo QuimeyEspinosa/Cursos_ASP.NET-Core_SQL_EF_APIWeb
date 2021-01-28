@@ -1,17 +1,71 @@
-﻿<div class="form-container">
-    <form>
-        <h2>Datos de contacto</h2>
-        <label>Nombre</label>
-        <input type="text" placeholder="Nombre" />
-        <br />
-        <label>Apellido</label>
-        <input type="text" placeholder="Apellido" />
-        <br />
-        <label>E-mail</label>
-        <input type="email" placeholder="E-mail" />
-        <br />
-        <label>Comentarios</label>
-        <textarea></textarea>
-        <button class="btn-primary">Aceptar</button>
-    </form>
+﻿<div>
+    <h3 class="text-container">Escribinos!</h3>
 </div>
+<div class="form-container">
+    <form id="formulario">
+        <h4>Datos de contacto</h4>
+        <!-- Nombre -->
+        <div>
+            <label>Nombre</label>
+            <input type="text" class="input-correct" id="name" name="name" placeholder="Nombre" />
+        </div>
+
+        <!-- Apellido -->
+        <div>
+            <label>Apellido</label>
+            <input type="text" class="input-correct" id="surname" name="surname" placeholder="Apellido" />
+        </div>
+
+        <!-- Email -->
+        <div>
+            <label>E-mail</label>
+            <input type="email" class="input-correct" id="email" name="email" placeholder="E-mail" />
+        </div>
+
+        <!-- Comentarios -->
+        <div>
+            <label>Comentarios</label>
+            <textarea id="comments"></textarea>
+        </div>
+
+        <!-- Error -->
+        <div class="form-message" id="form-message">
+            <p>Error, uno o más campos son inválidos</p>
+        </div>
+
+        <!-- Botón Enviar -->
+        <div>
+            <button type="submit" class="btn-primary">Enviar</button>
+        </div>
+    </form>
+
+    <script src="~/js/formulario.js"></script>
+</div>
+
+@*
+        <div class="form-container">
+        <form>
+            <h2>Datos de contacto</h2>
+            <div>
+                <label>Nombre</label>
+                <input type="text" id="elNombre" placeholder="Nombre" />
+            </div>
+            <br />
+            <div>
+                <label>Apellido</label>
+                <input type="text" id="elApellido" placeholder="Apellido" />
+            </div>
+            <br />
+            <div>
+                <label>E-mail</label>
+                <input type="email" id="elEmail" placeholder="E-mail" />
+            </div>
+            <br />
+            <div>
+                <label>Comentarios</label>
+                <textarea id="elComentario"></textarea>
+            </div>
+            <button class="btn-primary" onclick="form()">Aceptar</button>
+        </form>
+    </div>
+*@

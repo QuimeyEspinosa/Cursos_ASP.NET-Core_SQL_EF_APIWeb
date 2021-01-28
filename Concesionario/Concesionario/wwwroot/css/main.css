@@ -12,7 +12,7 @@ header {
     margin-bottom: 48px;
 }
 
-/* barra de navegación */
+/*----barra de navegación----*/
 
 .navbar {
     position: fixed;
@@ -21,6 +21,7 @@ header {
     left: 0px;
     width: 100%;
     box-shadow: rgba(0,0,0,0.1) 5px 5px 5px;
+    z-index: 1;
 }
 
     .navbar ul {
@@ -49,10 +50,11 @@ header {
 .container {
     width: auto;
     height: auto;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
+    overflow: hidden;
     align-items: center;
-    padding: 25px;
+    padding: 20px;
 }
 
     .container ul {
@@ -62,7 +64,7 @@ header {
     .container img {
         height: auto;
         width: auto;
-        max-width: 850px;
+        max-width: 100%;
     }
 
 .header-container {
@@ -76,10 +78,34 @@ header {
     text-align: center;
 }
 
+.car-container {
+    width: 100%;
+    height: 220px;
+    padding: 20px;
+    box-shadow: rgba(0,0,0,0.2) 0px 0px 5px;
+    margin-top: 20px;
+}
+
+    .car-container img {
+        width: 40%;
+        padding: 10px;
+        height: auto;
+        float: left;
+        margin-right: 20px;
+        box-sizing: border-box;
+    }
+
+    .car-container p {
+        text-align: justify;
+        font-size: 13px;
+    }
+
+/* -------formulario--------*/
+
 .form-container {
-    width: 60%;
+    width: 80%;
     height: 40%;
-    margin: 100px auto;
+    margin: 10px auto;
     background-color: #fff;
     border-radius: 10px;
 }
@@ -91,7 +117,7 @@ form {
     box-sizing: border-box;
 }
 
-    form h2 {
+    form h4 {
         text-align: center;
         margin-bottom: 20px;
         color: #045FB4;
@@ -102,10 +128,42 @@ form {
         color: #045FB4;
     }
 
+    form input {
+        border-style: solid;
+    }
+
+        form input:focus {
+            outline: none;
+        }
+
+.form-message {
+    background-color: #F66060;
+    height: 20px;
+    margin: 5px;
+    padding: 15px;
+    border-radius: 3px;
+    text-align: center;
+    display: none;
+}
+
+.form-message-active {
+    display: block;
+}
+
+.input-correct {
+    border-color: #045FB4;
+}
+
+.input-incorrect {
+    border-color: #eb1e1e;
+}
+
 input, textarea {
     width: 100%;
     padding: 7px;
     box-sizing: border-box;
+    border: 1px;
+    border-radius: 3px;
 }
 
 textarea {
@@ -113,6 +171,8 @@ textarea {
     max-height: 150px;
     max-width: 100%;
     min-width: 100%;
+    border-style: solid;
+    border-color: #045FB4;
 }
 
 .btn-primary {
@@ -128,6 +188,101 @@ textarea {
         background-color: #169bff;
         color: #fff;
     }
+
+/*---------------*/
+
+/*-----items------*/
+
+.item-container{
+    width: 810px;
+    margin: 20px auto;
+}
+
+.car-item {
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: rgba(0,0,0,0.4) 0px 0px 5px;
+    float: left;
+    margin: 10px;
+}
+    .car-item img {
+        width: 100%;
+    }
+    .car-item h4 {
+        padding: 4px;
+        text-align: center;
+        color: #045FB4;
+    }
+    .car-item p {
+        padding: 4px;
+        text-align: center;
+        font-size: 14px;
+        color: #045FB4;
+    }
+
+
+/*---slider---*/
+.slider {
+    width: 90%;
+    margin: 20px auto 20px auto;
+    
+}
+
+.slider-container {
+    margin: 10px auto;
+    max-width: 80%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.slider-element {
+    text-align: center;
+}
+
+    .slider-element img {
+        height: auto;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .slider-element p {
+        font-size: 16px;
+        color: #045FB4;
+    }
+
+.slider-prev,
+.slider-next {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: none;
+    top: calc(50% - 35px);
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    background: #045FB4;
+    color: #fff;
+    opacity: 20;
+}
+
+    .slider-prev,
+    .slider-next:focus {
+        outline: none;
+    }
+
+.slider-prev {
+    left: -30px;
+}
+
+.slider-next {
+    right: -30px;
+}
+
+/*---------------*/
 
 .horarios-container {
     text-align: center;
