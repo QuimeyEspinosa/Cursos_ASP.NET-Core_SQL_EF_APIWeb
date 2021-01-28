@@ -9,11 +9,11 @@
     var rutaFoto = "~/images/" + Model.Producto.RutaFoto;
 }
 
-<div class="text-center text-white">
+<div class="text-center text-white p-3">
     <h2>@Model.Titulo</h2>
 </div>
 <div class="row justify-content-center m-3">
-        <div class="card m-3 m-4 text-light">
+        <div class="card m-2 m-2 text-light">
             <div class="card-header text-center bg-dark">
                 <h1>@Model.Producto.Descripcion</h1>
             </div>
@@ -27,7 +27,7 @@
             <div class="card-footer text-center bg-dark">
                 <a asp-controller="home" asp-action="index" class="btn btn-primary">Volver</a>
                 <a asp-controller="Home" asp-action="Edit" asp-route-id="@Model.Producto.Id" class="btn btn-primary">Editar</a>
-                <a href="#" class="btn btn-danger">Borrar</a>
+                <a asp-controller="Home" asp-action="Delete" asp-route-id="@Model.Producto.Id" class="btn btn-danger">Borrar</a>
             </div>
         </div>
 </div>

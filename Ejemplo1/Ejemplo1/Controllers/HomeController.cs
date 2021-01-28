@@ -13,9 +13,9 @@ namespace Ejemplo1.Controllers
     public class HomeController : Controller
     {
         private IProductoComercio productoComercio;
-        private IHostingEnvironment hosting;
+        private IWebHostEnvironment hosting;
 
-        public HomeController(IProductoComercio prodComercio, IHostingEnvironment hostingEnvironment)
+        public HomeController(IProductoComercio prodComercio, IWebHostEnvironment hostingEnvironment)
         {
             productoComercio = prodComercio;
             hosting = hostingEnvironment;
@@ -144,6 +144,9 @@ namespace Ejemplo1.Controllers
             return nombreArchivo;
         }
 
+
+
+        //[HttpPost]
         public IActionResult Delete(Producto deleteProd)
         {
             if (ModelState.IsValid)
