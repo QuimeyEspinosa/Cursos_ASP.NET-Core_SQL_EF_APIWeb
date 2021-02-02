@@ -1,0 +1,26 @@
+﻿@model List<Producto>
+
+@{
+    ViewBag.Title = "Cafetería";
+}
+
+<div class="mcontainer">
+    <h3 class="thead-light text-left m-5">Resultados de la búsqueda</h3>
+    <div class="card-deck align-content-center">
+        @foreach (Producto prod in Model)
+        {
+            var rutaFoto = "~/images/" + prod.RutaFoto;
+            <div class="card-m3 m-4">
+                <div class="card-header text-center">
+                    <h3>@prod.Descripcion</h3>
+                </div>
+                <img class="card-img-top" src="@rutaFoto" asp-append-version="true" />
+                <div class="card-footer text-center">
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@prod.Id" class="btn btn-primary">Ver</a>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@prod.Id" class="btn btn-primary">Editar</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@prod.Id" class="btn btn-danger">Borrar</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

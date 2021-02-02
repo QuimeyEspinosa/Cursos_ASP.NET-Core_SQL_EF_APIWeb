@@ -3,7 +3,7 @@
     ViewBag.Title = "Nuevo Producto";
 }
 <div class="mcontainer">
-    <form id="formulario" asp-controller="Home" asp-action="Create" method="post" enctype="multipart/form-data">
+    <form class="mform" id="formulario" asp-controller="Home" asp-action="Create" method="post" enctype="multipart/form-data">
         <div class="form-group row m-3">
             <label asp-for="Descripcion" class="col-sm-2 col-form-label text-white"></label>
             <div class="col-sm-10">
@@ -45,5 +45,5 @@
         }
     </form>
 
-    <script src="~/js/form.js"></script>
+    <script src="~/js/app.js"></script>
 </div>

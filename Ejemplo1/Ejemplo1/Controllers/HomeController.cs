@@ -145,7 +145,6 @@ namespace Ejemplo1.Controllers
         }
 
 
-
         //[HttpPost]
         public IActionResult Delete(Producto deleteProd)
         {
@@ -157,6 +156,19 @@ namespace Ejemplo1.Controllers
             return RedirectToAction("index");
         }
 
+
+        public IActionResult Search(string searchString)
+        {
+            List<Producto> productosBusqueda = productoComercio.GetProductos();
+            List<Producto> auxList = new List<Producto>();
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                auxList = productosBusqueda.Where(p => p.Descripcion.Contains(searchString)).ToList<Producto>();
+            }
+
+            return View(auxList);
+        }
 
 
         #region Comentarios

@@ -47,29 +47,29 @@
     border-radius: 10px;
 }
 
-form {
+.mform {
     margin: 10px auto;
     border-radius: 3px;
     padding: 10px;
     box-sizing: border-box;
 }
 
-    form h4 {
+    .mform h4 {
         text-align: center;
         margin-bottom: 20px;
         color: #045FB4;
     }
 
-    form label {
+    .mform label {
         text-align: left;
         color: #045FB4;
     }
 
-    form input {
+    .mform input {
         border-style: solid;
     }
 
-        form input:focus {
+        .mform input:focus {
             outline: none;
         }
 
@@ -111,3 +111,6 @@ textarea {
     border-style: solid;
     border-color: #045FB4;
 }
+
+/*-----Search-----*/
+

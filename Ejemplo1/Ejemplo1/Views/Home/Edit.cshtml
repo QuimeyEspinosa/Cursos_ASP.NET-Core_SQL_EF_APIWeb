@@ -5,7 +5,7 @@
     var rutaFoto = "~/images/" + (Model.RutaFotoExistente ?? "cafe.jpg");
 }
 <div class="mcontainer">
-    <form asp-controller="Home" asp-action="Edit" method="post" enctype="multipart/form-data">
+    <form class="mform" asp-controller="Home" asp-action="Edit" method="post" enctype="multipart/form-data">
         <div class="form-group row m-3">
             <label asp-for="Descripcion" class="col-sm-2 col-form-label text-white"></label>
             <div class="col-sm-10">

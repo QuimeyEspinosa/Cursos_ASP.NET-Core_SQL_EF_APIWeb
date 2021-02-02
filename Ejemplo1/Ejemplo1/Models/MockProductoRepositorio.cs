@@ -59,5 +59,20 @@ namespace Ejemplo1.Models
 
             return prod;
         }
+
+        public List<Producto> GetProductosBusqueda(string nombreProd)
+        {
+            List<Producto> productosBusqueda = new List<Producto>();
+
+            foreach (Producto item in productosMock)
+            {
+                if (item.Descripcion.Contains(nombreProd))
+                {
+                    productosBusqueda.Add(item);
+                }
+            }
+
+            return productosBusqueda;
+        }
     }
 }
