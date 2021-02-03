@@ -79,6 +79,8 @@ header {
     text-align: center;
 }
 
+/*-------Contenedor auto-------*/
+
 .car-container {
     width: 100%;
     height: 220px;
@@ -190,11 +192,9 @@ textarea {
         color: #fff;
     }
 
-/*---------------*/
-
 /*-----items------*/
 
-.item-container{
+.item-container {
     width: 810px;
     margin: 20px auto;
 }
@@ -202,34 +202,76 @@ textarea {
 .car-item {
     background-color: #fff;
     width: 250px;
-    height: 350px;
+    height: 320px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     box-shadow: rgba(0,0,0,0.4) 0px 0px 5px;
     float: left;
     margin: 10px;
 }
+
     .car-item img {
         width: 100%;
     }
-    .car-item h4 {
-        padding: 4px;
+
+.car-item-header {
+    padding: 4px;
+}
+
+    .car-item-header h3 {
         text-align: center;
         color: #045FB4;
     }
-    .car-item p {
+
+.car-item-description {
+    padding: 4px;
+}
+
+    .car-item-description p {
         padding: 4px;
         text-align: center;
-        font-size: 14px;
+        font-size: 15px;
         color: #045FB4;
     }
+
+.car-item-footer {
+    padding: 4px;
+}
+
+    .car-item-footer ul {
+        list-style-type: none;
+    }
+
+    .car-item-footer li {
+        float: left;
+        margin: 2px auto;
+    }
+
+        .car-item-footer li a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 6px;
+            text-decoration: none;
+        }
+
+            .car-item-footer li a:hover {
+                background-color: #008aff;
+            }
+
+.car-item-button {
+    padding: 4px;
+    background-color: #045FB4;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+}
 
 
 /*---slider---*/
 .slider {
     width: 90%;
     margin: 20px auto 20px auto;
-    
 }
 
 .slider-container {
@@ -301,6 +343,7 @@ textarea {
     color: #045FB4;
     padding: 40px;
 }
+
     .horarios-container p {
         color: #fff;
     }
@@ -311,6 +354,7 @@ textarea {
     color: #045FB4;
     padding: 40px;
 }
+
     .contacto-container h4 {
         color: #fff;
     }

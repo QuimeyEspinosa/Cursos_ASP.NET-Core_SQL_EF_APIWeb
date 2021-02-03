@@ -4,50 +4,62 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Nuestras unidades disponibles</h1>
+<div class="container">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Modelo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Precio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Modelo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="header-container">
+        <h1>Nuestras unidades disponibles</h1>
+    </div>
+
+
+    @foreach (var item in Model)
+    {
+        <!--Item-->
+        <div class="car-item">
+
+            <!--Img-->
+            <img src="~/img/ford/ford-focus-iii.jpg" />
+
+            <!--Header-->
+            <div class="car-item-header">
+                <h3>@item.Descripcion</h3>
+            </div>
+
+            <!--Description-->
+            <div class="car-item-description">
+                <ul>
+                    <li>
+                        <p> Modelo: @item.Modelo </p>
+                    </li>
+                    <li>
+                        <p>Precio: $@item.Precio </p>
+                    </li>
+                    <li>
+                        <p> Estado: @item.Estado </p>
+                    </li>
+                </ul>
+            </div>
+
+            @*
+                <!--Footer-->
+                <div class="car-item-footer">
+                    <ul>
+                        <li>
+                            <a class="car-item-button" asp-controller="Cars" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        </li>
+                        <li>
+                            <a class="car-item-button" asp-controller="Cars" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        </li>
+                        <li>
+                            <a class="car-item-button" asp-controller="Cars" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </li>
+                    </ul>
+                </div>
+            *@
+        </div>
+    }
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+
+</div>
