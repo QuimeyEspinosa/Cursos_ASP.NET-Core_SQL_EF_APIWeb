@@ -5,9 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\img\ford\" />
-    <Folder Include="wwwroot\img\chevrolet\" />
-    <Folder Include="wwwroot\img\peugeot\" />
+    <Compile Remove="wwwroot\img\chevrolet\**" />
+    <Compile Remove="wwwroot\img\ford\**" />
+    <Compile Remove="wwwroot\img\peugeot\**" />
+    <Content Remove="wwwroot\img\chevrolet\**" />
+    <Content Remove="wwwroot\img\ford\**" />
+    <Content Remove="wwwroot\img\peugeot\**" />
+    <EmbeddedResource Remove="wwwroot\img\chevrolet\**" />
+    <EmbeddedResource Remove="wwwroot\img\ford\**" />
+    <EmbeddedResource Remove="wwwroot\img\peugeot\**" />
+    <None Remove="wwwroot\img\chevrolet\**" />
+    <None Remove="wwwroot\img\ford\**" />
+    <None Remove="wwwroot\img\peugeot\**" />
   </ItemGroup>
 
   <ItemGroup>

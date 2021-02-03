@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace Concesionario.Models
 {
-    public class Car
+    public class CreateCarViewModel
     {
-        public int Id { get; set; }
-
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string Descripcion { get; set; }
@@ -23,7 +22,6 @@ namespace Concesionario.Models
 
         public string Estado { get; set; }
 
-        public string PathImg { get; set; }
-
+        public IFormFile Foto { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Concesionario.Models.Car>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Cars";
 }
 
 <div class="container">
@@ -10,14 +10,15 @@
         <h1>Nuestras unidades disponibles</h1>
     </div>
 
-
     @foreach (var item in Model)
     {
+        var pathImg = "~/img/" + item.PathImg;
+
         <!--Item-->
         <div class="car-item">
 
             <!--Img-->
-            <img src="~/img/ford/ford-focus-iii.jpg" />
+            <img src="@pathImg" asp-append-version="true" />
 
             <!--Header-->
             <div class="car-item-header">
@@ -39,22 +40,21 @@
                 </ul>
             </div>
 
-            @*
-                <!--Footer-->
-                <div class="car-item-footer">
-                    <ul>
-                        <li>
-                            <a class="car-item-button" asp-controller="Cars" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        </li>
-                        <li>
-                            <a class="car-item-button" asp-controller="Cars" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                        </li>
-                        <li>
-                            <a class="car-item-button" asp-controller="Cars" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                        </li>
-                    </ul>
-                </div>
-            *@
+            <!--Footer-->
+            <div class="car-item-footer">
+                <ul>
+                    <li>
+                        <a class="car-item-button" asp-controller="Cars" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    </li>
+                    <li>
+                        <a class="car-item-button" asp-controller="Cars" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    </li>
+                    <li>
+                        <a class="car-item-button" asp-controller="Cars" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     }
 
