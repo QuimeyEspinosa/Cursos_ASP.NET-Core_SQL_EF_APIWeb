@@ -4,12 +4,17 @@
     ViewData["Title"] = "Cars";
 }
 
+<h1 class="header-container">Resultados de la búsqueda</h1>
+<hr />
+
 <div class="container">
 
-    <h1 class="header-container">Resultados de la búsqueda</h1>
-    <hr />
-
     <div class="item-container">
+
+        <form class="box" asp-controller="Cars" asp-action="Search">
+            <input type="text" name="SearchString" placeholder="Buscar..." />
+            @*<input type="submit" value="Buscar"/>*@
+        </form>
 
         @foreach (var item in Model)
         {

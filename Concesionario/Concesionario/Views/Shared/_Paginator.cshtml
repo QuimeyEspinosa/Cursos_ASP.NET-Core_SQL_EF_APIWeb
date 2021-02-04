@@ -1,0 +1,70 @@
+﻿@model Concesionario.Models.Paginator
+
+@{
+    var pagesCount = (int)Math.Ceiling((double)Model.TotalItems / Model.SizePage);
+}
+
+<!--Funcionalidad: Anterior y siguiente-->
+
+@*
+    <div class="mpagination">
+        <ul>
+            @if (Model.CurrentPage == 1)
+            {
+                <li class="disabled">@Html.ActionLink("Anterior", null, new { page = 1 })</li>
+            }
+            else
+            {
+                <li>@Html.ActionLink("Anterior", null, new { page = Model.CurrentPage - 1 })</li>
+            }
+
+            @if (Model.CurrentPage == pagesCount)
+            {
+                <li class="disabled">@Html.ActionLink("Siguiente", null, new { page = pagesCount })</li>
+            }
+            else
+            {
+                <li>@Html.ActionLink("Siguiente", null, new { page = Model.CurrentPage + 1 })</li>
+            }
+        </ul>
+    </div>
+*@
+
+<!--Funcionalidad: Páginas-->
+
+@{
+    int initial = 1;
+    var radio = 3;
+    var maxPagesCount = radio * 2 + 1;
+    int final = (pagesCount > maxPagesCount) ? maxPagesCount : pagesCount;
+    if (Model.CurrentPage > radio + 1)
+    {
+        initial = Model.CurrentPage - radio;
+        if (pagesCount > Model.CurrentPage + radio)
+        {
+            final = Model.CurrentPage + radio;
+        }
+        else
+        {
+            final = pagesCount;
+        }
+    }
+}
+
+<div class="mpagination">
+    <ul>
+        <li>@Html.ActionLink("Primera", null, new { page = 1 })</li>
+        @for (int i = initial; i <= final; i++)
+        {
+            if (i == Model.CurrentPage)
+            {
+                <li class="active">@Html.ActionLink(i.ToString(), null, new { page = i })</li>
+            }
+            else
+            {
+                <li>@Html.ActionLink(i.ToString(), null, new { page = i })</li>
+            }
+        }
+        <li>@Html.ActionLink("Ultima", null, new { page = pagesCount })</li>
+    </ul>
+</div>

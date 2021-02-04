@@ -9,6 +9,9 @@ using Concesionario.Data;
 using Concesionario.Models;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Concesionario.Helpers;
+using Microsoft.AspNetCore.Http;
+
 
 namespace Concesionario.Controllers
 {
@@ -23,64 +26,50 @@ namespace Concesionario.Controllers
             hosting = hostingEnvironment;
         }
 
+        #region Index Sin paginado        
+
+        /*
         // GET: Cars
         public async Task<IActionResult> Index()
         {
             return View(await _context.Car.ToListAsync());
         }
-
-        #region IntentoPaginacion
-
-        /*
-        public async Task<IActionResult> Index(
-    string sortOrder,
-    string currentFilter,
-    string searchString,
-    int? pageNumber)
-        {
-            ViewData["CurrentSort"] = sortOrder;
-            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
-
-            if (searchString != null)
-            {
-                pageNumber = 1;
-            }
-            else
-            {
-                searchString = currentFilter;
-            }
-
-            ViewData["CurrentFilter"] = searchString;
-
-            var students = from s in _context.Car
-                           select s;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                students = students.Where(s => s.Descripcion.Contains(searchString));
-            }
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    students = students.OrderByDescending(s => s.Descripcion);
-                    break;
-                case "Date":
-                    students = students.OrderBy(s => s.Precio);
-                    break;
-                case "date_desc":
-                    students = students.OrderByDescending(s => s.Modelo);
-                    break;
-                default:
-                    students = students.OrderBy(s => s.Estado);
-                    break;
-            }
-
-            int pageSize = 3;
-            return View(await PaginatedList<Car>.CreateAsync(students.AsNoTracking(), pageNumber ?? 1, pageSize));
-        }
         */
 
         #endregion
+
+        #region Index Paginado 1er intento
+        /*
+        [HttpGet]
+        public async Task<ActionResult<List<Car>>> Index([FromQuery]Pagination p)
+        {
+            var queryable = _context.Car.AsQueryable();
+
+            await HttpContext.InsertAnswerPaginationParams(queryable, p.ItemsToShow);
+
+            return View(await queryable.Paginar(p).ToListAsync());
+        }
+        */
+        #endregion
+
+        public IActionResult Index(int page = 1)
+        {
+            var pageSize = 6; //cantidad de items por página
+
+            var cars = _context.Car.OrderBy(c => c.Id)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize).ToList();
+
+            var totalItems = _context.Car.Count();
+
+            var model = new IndexViewModel();
+            model.Cars = cars;
+            model.CurrentPage = page;
+            model.TotalItems = totalItems;
+            model.SizePage = pageSize;
+
+            return View(model);
+        }
 
         // GET: Cars/Details/5
         public async Task<IActionResult> Details(int? id)

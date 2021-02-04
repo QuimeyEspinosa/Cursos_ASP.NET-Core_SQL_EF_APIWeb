@@ -15,6 +15,7 @@ namespace Concesionario.Models
         [Required]
         public string Descripcion { get; set; }
 
+        [RegularExpression(@"^\d{4}$")]
         public string Modelo { get; set; }
 
         [DataType(DataType.Currency)]

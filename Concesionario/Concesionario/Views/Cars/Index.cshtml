@@ -1,13 +1,17 @@
-﻿@model IEnumerable<Concesionario.Models.Car>
+﻿@*@model IEnumerable<Concesionario.Models.Car>
+    @model List<Concesionario.Models.Car>
+*@
+
+@model Concesionario.Models.IndexViewModel
 
 @{
     ViewData["Title"] = "Cars";
 }
 
-<div class="container">
+<h1 class="header-container">Nuestras unidades disponibles</h1>
+<hr />
 
-    <h1 class="header-container">Nuestras unidades disponibles</h1>
-    <hr />
+<div class="container">
 
     <div class="item-container">
 
@@ -16,7 +20,7 @@
             @*<input type="submit" value="Buscar"/>*@
         </form>
 
-        @foreach (var item in Model)
+        @foreach (var item in Model.Cars)
         {
             var pathImg = "~/img/" + item.PathImg;
 
@@ -63,22 +67,17 @@
 
             </div>
         }
+
     </div>
 </div>
 
 <div class="container">
-    <div class="pagination">
-        <ul>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-        </ul>
-    </div>
+    @await Html.PartialAsync("_Paginator", Model)
 </div>
 
-<div class="container">
+<div class="item-container">
     <p>
-        <a asp-action="Create" class="btn-primary">Nueva publicación</a>
+        <a asp-action="Create" class="btn-new">Nueva publicación</a>
     </p>
 </div>
 
