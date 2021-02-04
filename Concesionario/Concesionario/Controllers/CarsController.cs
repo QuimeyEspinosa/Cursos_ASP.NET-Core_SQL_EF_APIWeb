@@ -271,10 +271,12 @@ namespace Concesionario.Controllers
         {
             List<Car> myCars = await _context.Car.ToListAsync();
             List<Car> auxCars = new List<Car>();
+            string auxSearch;
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                auxCars = myCars.Where(c => c.Descripcion.Contains(searchString)).ToList<Car>();
+                auxSearch = searchString.ToLower();
+                auxCars = myCars.Where(c => c.Descripcion.ToLower().Contains(auxSearch)).ToList<Car>();
             }
 
             return View(auxCars);

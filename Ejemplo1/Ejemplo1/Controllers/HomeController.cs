@@ -30,6 +30,7 @@ namespace Ejemplo1.Controllers
 
             return View(productos);
         }
+        
 
         [Route("Home/Details/{id?}")]
         public ViewResult Details(int? id)
@@ -161,10 +162,12 @@ namespace Ejemplo1.Controllers
         {
             List<Producto> productosBusqueda = productoComercio.GetProductos();
             List<Producto> auxList = new List<Producto>();
+            string auxSearch;
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                auxList = productosBusqueda.Where(p => p.Descripcion.Contains(searchString)).ToList<Producto>();
+                auxSearch = searchString.ToLower();
+                auxList = productosBusqueda.Where(p => p.Descripcion.ToLower().Contains(auxSearch)).ToList<Producto>();
             }
 
             return View(auxList);
