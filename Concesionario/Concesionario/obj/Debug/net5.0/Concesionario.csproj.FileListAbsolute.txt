@@ -171,3 +171,4 @@ C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Conces
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Concesionario.csproj.CopyComplete
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Concesionario.genruntimeconfig.cache
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Concesionario.csprojAssemblyReference.cache
+C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\Cars\Search.cshtml.g.cs

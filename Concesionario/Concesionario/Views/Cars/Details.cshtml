@@ -4,39 +4,46 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+
+<div class="container">
+
+    <h1 class="header-container">Detalles del vehículo</h1>
+    <hr />
+
+    <div class="item-container">
+        @{
+            var pathImg = "~/img/" + Model.PathImg;
+
+            <!--Item-->
+            <div class="car-item-details">
+
+                <!--Img-->
+                <img src="@pathImg" asp-append-version="true" />
+
+                <!--Header-->
+                <div class="car-item-header">
+                    <h3>@Model.Descripcion</h3>
+                </div>
+
+                <!--Description-->
+                <div class="car-item-description">
+                    <ul>
+                        <li>
+                            <p> Modelo: @Model.Modelo </p>
+                        </li>
+                        <li>
+                            <p>Precio: $@Model.Precio </p>
+                        </li>
+                        <li>
+                            <p> Estado: @Model.Estado </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+</div>
 
 <div>
-    <h4>Car</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Modelo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Modelo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn-primary">Volver</a>
 </div>

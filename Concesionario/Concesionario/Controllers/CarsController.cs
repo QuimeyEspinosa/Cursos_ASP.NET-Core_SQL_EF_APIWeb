@@ -225,5 +225,18 @@ namespace Concesionario.Controllers
             return nombreArchivo;
         }
 
+        public async Task<IActionResult> Search(string searchString)
+        {
+            List<Car> myCars = await _context.Car.ToListAsync();
+            List<Car> auxCars = new List<Car>();
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                auxCars = myCars.Where(c => c.Descripcion.Contains(searchString)).ToList<Car>();
+            }
+
+            return View(auxCars);
+        }
+
     }
 }
