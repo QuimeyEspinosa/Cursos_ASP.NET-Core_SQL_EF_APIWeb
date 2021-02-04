@@ -29,6 +29,59 @@ namespace Concesionario.Controllers
             return View(await _context.Car.ToListAsync());
         }
 
+        #region IntentoPaginacion
+
+        /*
+        public async Task<IActionResult> Index(
+    string sortOrder,
+    string currentFilter,
+    string searchString,
+    int? pageNumber)
+        {
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
+            var students = from s in _context.Car
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.Descripcion.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.Descripcion);
+                    break;
+                case "Date":
+                    students = students.OrderBy(s => s.Precio);
+                    break;
+                case "date_desc":
+                    students = students.OrderByDescending(s => s.Modelo);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.Estado);
+                    break;
+            }
+
+            int pageSize = 3;
+            return View(await PaginatedList<Car>.CreateAsync(students.AsNoTracking(), pageNumber ?? 1, pageSize));
+        }
+        */
+
+        #endregion
+
         // GET: Cars/Details/5
         public async Task<IActionResult> Details(int? id)
         {

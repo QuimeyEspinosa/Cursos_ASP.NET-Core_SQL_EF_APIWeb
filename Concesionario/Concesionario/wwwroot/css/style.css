@@ -107,7 +107,7 @@ header {
 
 .form-container {
     width: 80%;
-    height: 40%;
+    height: 50%;
     margin: 10px auto;
     background-color: #fff;
     border-radius: 10px;
@@ -185,6 +185,8 @@ textarea {
     padding: 10px;
     border-radius: 5px;
     border: none;
+    text-decoration: none;
+    float: inherit;
 }
 
     .btn-primary:hover {
@@ -202,7 +204,7 @@ textarea {
 .car-item {
     background-color: #fff;
     width: 250px;
-    height: 320px;
+    height: 350px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     box-shadow: rgba(0,0,0,0.4) 0px 0px 5px;
@@ -215,7 +217,9 @@ textarea {
     }
 
 .car-item-header {
-    padding: 4px;
+    padding: 5px;
+    margin: 5px auto;
+    position: relative;
 }
 
     .car-item-header h3 {
@@ -224,51 +228,69 @@ textarea {
     }
 
 .car-item-description {
-    padding: 4px;
+    padding: 5px;
+    margin: 6px auto;
+    position: relative;
 }
 
     .car-item-description p {
-        padding: 4px;
         text-align: center;
         font-size: 15px;
         color: #045FB4;
     }
 
 .car-item-footer {
-    padding: 4px;
 }
 
     .car-item-footer ul {
-        list-style-type: none;
+        display: flex;
+        justify-content: center;
     }
 
     .car-item-footer li {
         float: left;
-        margin: 2px auto;
+        margin-top: 15px;
+        bottom: 0px;
+        position: relative;
     }
-
         .car-item-footer li a {
-            display: block;
-            color: #fff;
             text-align: center;
-            padding: 6px;
+            padding: 8px;
             text-decoration: none;
+            background-color: #045FB4;
+            color: #fff;
+            margin: 3px;
+            border-radius: 3px;
         }
 
-            .car-item-footer li a:hover {
-                background-color: #008aff;
-            }
+        .car-item-footer li a:hover {
+            background-color: #008aff;
+        }
 
+
+.car-item-details {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: rgba(0,0,0,0.4) 0px 0px 5px;
+    float: left;
+    margin: 10px;
+}
+
+/*
 .car-item-button {
-    padding: 4px;
+    padding: 6px;
     background-color: #045FB4;
     color: #fff;
     border: none;
-    border-radius: 3px;
-}
-
+    border-radius: 2px;
+    margin: auto 13px;
+}*/
 
 /*---slider---*/
+
 .slider {
     width: 90%;
     margin: 20px auto 20px auto;
@@ -359,22 +381,39 @@ textarea {
         color: #fff;
     }
 
-
 .box {
     width: 100%;
     height: auto;
 }
 
-/*---footer---
+    .box input {
+        border: none;
+        box-shadow: rgba(0,0,0,0.4) 0px 0px 5px;
+    }
 
-footer {
+.pagination {
     width: 100%;
-    height: 200px;
-    background-color: #1d1d1d;
-    color: #fff;
-    bottom: 0;
-    position: relative;
-    align-items: center;
 }
-    */
 
+    .pagination ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagination li {
+        float: left;
+    }
+
+        .pagination li a {
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+            background-color: #045FB4;
+            color: #fff;
+            margin: 3px;
+            border-radius: 3px;
+        }
+
+            .pagination li a:hover {
+                background-color: #008aff;
+            }
