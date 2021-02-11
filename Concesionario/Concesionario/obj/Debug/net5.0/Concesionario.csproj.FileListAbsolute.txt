@@ -160,6 +160,7 @@ C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\Home\ContactUs.cshtml.g.cs
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\Shared\_Paginator.cshtml.g.cs
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
@@ -172,4 +173,3 @@ C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\ref\Co
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Concesionario.pdb
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Concesionario.genruntimeconfig.cache
 C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Concesionario.csprojAssemblyReference.cache
-C:\Users\Quimey\source\repos\Concesionario\Concesionario\obj\Debug\net5.0\Razor\Views\Shared\_Paginator.cshtml.g.cs

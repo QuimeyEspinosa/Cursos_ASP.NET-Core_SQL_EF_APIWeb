@@ -24,7 +24,11 @@ namespace Concesionario.Models
 
         public string Estado { get; set; }
 
+        public int Kilometros { get; set; }
+
         public string PathImg { get; set; }
+
+        public int MarcaId { get; set; }
 
     }
 }

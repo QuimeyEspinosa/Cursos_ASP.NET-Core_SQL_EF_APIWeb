@@ -1,25 +1,22 @@
-﻿@*@model IEnumerable<Concesionario.Models.Car>
-    @model List<Concesionario.Models.Car>
-*@
-
-@model Concesionario.Models.IndexViewModel
+﻿@model Concesionario.Models.IndexViewModel
 
 @{
     ViewData["Title"] = "Cars";
 }
 
-<h1 class="header-container">Nuestras unidades disponibles</h1>
-<hr />
-
-<div class="container">
-
-    <div class="item-container">
-
+<div class="top-container">
+    <div class="container">
+        <h1 class="header-container">Nuestras unidades disponibles</h1>
         <form class="box" asp-controller="Cars" asp-action="Search">
             <input type="text" name="SearchString" placeholder="Buscar..." />
             @*<input type="submit" value="Buscar"/>*@
         </form>
+    </div>
+</div>
+<div class="container">
 
+    <div class="item-container">        
+               
         @foreach (var item in Model.Cars)
         {
             var pathImg = "~/img/" + item.PathImg;
@@ -32,7 +29,7 @@
 
                 <!--Header-->
                 <div class="car-item-header">
-                    <h3>@item.Descripcion</h3>
+                    <h3>@item.Marca @item.Descripcion</h3>
                 </div>
 
                 <!--Description-->
@@ -43,6 +40,9 @@
                         </li>
                         <li>
                             <p>Precio: $@item.Precio </p>
+                        </li>
+                        <li>
+                            <p>Kilometros: $@item.Kilometros </p>
                         </li>
                         <li>
                             <p> Estado: @item.Estado </p>

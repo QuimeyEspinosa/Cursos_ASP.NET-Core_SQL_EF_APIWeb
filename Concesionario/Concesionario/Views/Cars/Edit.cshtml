@@ -3,49 +3,67 @@
 @{
     ViewData["Title"] = "Edit Car";
 }
-
-<h1 class="header-container">Editar auto</h1>
-<hr />
-
-<div class="form-container">
-    <form asp-controller="Cars" asp-action="Edit" method="post" enctype="multipart/form-data">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <input type="hidden" asp-for="Id" />
-        <div class="form-group">
-            <label asp-for="Descripcion" class="control-label"></label>
-            <input asp-for="Descripcion" class="input-correct" />
-            <span asp-validation-for="Descripcion" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Modelo" class="control-label"></label>
-            <input asp-for="Modelo" class="input-correct" />
-            <span asp-validation-for="Modelo" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Precio" class="control-label"></label>
-            <input asp-for="Precio" class="input-correct" />
-            <span asp-validation-for="Precio" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Estado" class="control-label"></label>
-            <input asp-for="Estado" class="input-correct" />
-            <span asp-validation-for="Estado" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Foto" class="control-label"></label>
-            <input asp-for="Foto" class="input-correct" />
-        </div>
-        <br />
-        <div class="form-group">
-            <a><input type="submit" value="Guardar cambios" class="btn-primary" /></a>
-        </div>
-    </form>
+<div class="top-container">
+    <div class="container">
+        <h1 class="header-container">Editar vehículo</h1>
+    </div>
 </div>
 
-<div>
-    <a asp-action="Index" class="btn-primary">Volver</a>
-</div>
+<div class="container">
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    <div class="form-container">
+        <form asp-controller="Cars" asp-action="Edit" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Marca" class="control-label"></label>
+                <div class="form-select">
+                    <select asp-for="Marca" asp-items="Model.Marcas" class="input-correct"></select>
+                    <span asp-validation-for="Marca" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="input-correct" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modelo" class="control-label"></label>
+                <input asp-for="Modelo" class="input-correct" />
+                <span asp-validation-for="Modelo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Precio" class="control-label"></label>
+                <input asp-for="Precio" class="input-correct" />
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kilometros" class="control-label"></label>
+                <input asp-for="Kilometros" class="input-correct" />
+                <span asp-validation-for="Kilometros" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="input-correct" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Foto" class="control-label"></label>
+                <input asp-for="Foto" class="input-correct" />
+            </div>
+            <br />
+            <div class="form-group">
+                <a><input type="submit" value="Guardar cambios" class="btn-primary" /></a>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn-primary">Volver</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+</div>

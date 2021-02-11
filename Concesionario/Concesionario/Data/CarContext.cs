@@ -14,5 +14,6 @@ namespace Concesionario.Data
         }
 
         public DbSet<Car> Car { get; set; }
+        public DbSet<Marca> Marca { get; set; }
     }
 }

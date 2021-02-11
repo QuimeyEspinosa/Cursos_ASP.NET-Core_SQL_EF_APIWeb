@@ -60,10 +60,30 @@ namespace Concesionario.Controllers
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize).ToList();
 
+            var marcas = _context.Marca.ToList();
             var totalItems = _context.Car.Count();
 
-            var model = new IndexViewModel();
-            model.Cars = cars;
+            IndexViewModel model = new IndexViewModel();            
+
+            foreach (Car item in cars)
+            {
+                CarViewModel newCar = new CarViewModel();
+
+                var marcaVehiculo = marcas.Where(x => x.Id == item.MarcaId)
+                    .Select(x => new { x.Nombre }).ToList();
+
+                newCar.Id = item.Id;
+                newCar.Descripcion = item.Descripcion;
+                newCar.Modelo = item.Modelo;
+                newCar.Precio = item.Precio;
+                newCar.Estado = item.Estado;
+                newCar.PathImg = item.PathImg;
+                newCar.MarcaId = item.MarcaId;
+                newCar.Marca = marcaVehiculo[0].Nombre;
+
+                model.Cars.Add(newCar);
+            }
+
             model.CurrentPage = page;
             model.TotalItems = totalItems;
             model.SizePage = pageSize;
@@ -92,7 +112,12 @@ namespace Concesionario.Controllers
         // GET: Cars/Create
         public IActionResult Create()
         {
-            return View();
+            CreateCarViewModel model = new CreateCarViewModel();
+
+            model.Marcas = _context.Marca.Select(marca => new SelectListItem() { Value = marca.Id.ToString(), Text = marca.Nombre.ToString() })
+                .ToList();
+
+            return View(model);
         }
 
         // POST: Cars/Create
@@ -100,7 +125,7 @@ namespace Concesionario.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Descripcion,Modelo,Precio,Estado,Foto")] CreateCarViewModel car)
+        public async Task<IActionResult> Create([Bind("Marca,Descripcion,Modelo,Precio,Kilometros,Estado,Foto")] CreateCarViewModel car)
         {
             if (ModelState.IsValid)
             {
@@ -122,6 +147,8 @@ namespace Concesionario.Controllers
                 newCar.Modelo = car.Modelo;
                 newCar.Precio = car.Precio;
                 newCar.Estado = car.Estado;
+                newCar.Kilometros = car.Kilometros;
+                newCar.MarcaId = car.Marca;
                 newCar.PathImg = guidImagen;
 
                 _context.Add(newCar);
@@ -129,7 +156,7 @@ namespace Concesionario.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            return View(car);
+            return View();
         }
 
 
@@ -150,8 +177,13 @@ namespace Concesionario.Controllers
                 Modelo = car.Modelo,
                 Precio = car.Precio,
                 Estado = car.Estado,
-                ExistPathImg = car.PathImg
+                Kilometros = car.Kilometros,
+                ExistPathImg = car.PathImg,
+                Marca = car.MarcaId
             };
+
+            editCar.Marcas = _context.Marca.Select(marca => new SelectListItem() { Value = marca.Id.ToString(), Text = marca.Nombre.ToString() })
+                .ToList();
 
             if (car == null)
             {
@@ -166,7 +198,7 @@ namespace Concesionario.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Descripcion,Modelo,Precio,Estado,Foto")] EditCarViewModel car)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Marca,Descripcion,Modelo,Precio,Estado,Foto")] EditCarViewModel car)
         {
             if (id != car.Id)
             {
@@ -183,6 +215,8 @@ namespace Concesionario.Controllers
                     myCar.Modelo = car.Modelo;
                     myCar.Precio = car.Precio;
                     myCar.Estado = car.Estado;
+                    myCar.Kilometros = car.Kilometros;
+                    myCar.MarcaId = car.Marca;
 
                     if (car.Foto != null)
                     {

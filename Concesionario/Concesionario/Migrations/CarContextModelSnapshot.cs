@@ -33,6 +33,15 @@ namespace Concesionario.Migrations
                     b.Property<string>("Estado")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Kilometros")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Marca")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MarcaId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Modelo")
                         .HasColumnType("nvarchar(max)");
 
@@ -44,7 +53,38 @@ namespace Concesionario.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("MarcaId");
+
                     b.ToTable("Car");
+                });
+
+            modelBuilder.Entity("Concesionario.Models.Marca", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Marca");
+                });
+
+            modelBuilder.Entity("Concesionario.Models.Car", b =>
+                {
+                    b.HasOne("Concesionario.Models.Marca", null)
+                        .WithMany("Cars")
+                        .HasForeignKey("MarcaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Concesionario.Models.Marca", b =>
+                {
+                    b.Navigation("Cars");
                 });
 #pragma warning restore 612, 618
         }

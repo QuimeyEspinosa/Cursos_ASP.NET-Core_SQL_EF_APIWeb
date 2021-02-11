@@ -3,12 +3,13 @@
 @{
     ViewData["Title"] = "Details";
 }
-
+<div class="top-container">
+    <div class="container">
+        <h1 class="header-container">Detalles del vehículo</h1>
+    </div>
+</div>
 
 <div class="container">
-
-    <h1 class="header-container">Detalles del vehículo</h1>
-    <hr />
 
     <div class="item-container">
         @{
@@ -22,7 +23,7 @@
 
                 <!--Header-->
                 <div class="car-item-header">
-                    <h3>@Model.Descripcion</h3>
+                    <h3> @Model.Descripcion</h3>
                 </div>
 
                 <!--Description-->
@@ -37,6 +38,9 @@
                         <li>
                             <p> Estado: @Model.Estado </p>
                         </li>
+                        <li>
+                            <p> Estado: @Model.Kilometros </p>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -44,6 +48,6 @@
     </div>
 </div>
 
-<div>
+<div class="container">
     <a asp-action="Index" class="btn-primary">Volver</a>
 </div>
