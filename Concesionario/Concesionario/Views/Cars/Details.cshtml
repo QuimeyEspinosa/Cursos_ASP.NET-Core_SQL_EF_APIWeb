@@ -1,4 +1,4 @@
-﻿@model Concesionario.Models.Car
+﻿@model Concesionario.Models.CarViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -23,7 +23,7 @@
 
                 <!--Header-->
                 <div class="car-item-header">
-                    <h3> @Model.Descripcion</h3>
+                    <h3> @Model.Marca @Model.Descripcion</h3>
                 </div>
 
                 <!--Description-->

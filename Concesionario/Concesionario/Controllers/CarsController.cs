@@ -52,6 +52,9 @@ namespace Concesionario.Controllers
         */
         #endregion
 
+        #region Index llamadas a la base
+
+        /*
         public IActionResult Index(int page = 1)
         {
             var pageSize = 6; //cantidad de items por página
@@ -90,6 +93,65 @@ namespace Concesionario.Controllers
 
             return View(model);
         }
+        */
+
+        #endregion
+
+        public async Task<IActionResult> Index(int page = 1)
+        {
+            var pageSize = 6; //cantidad de items por página
+
+            var marcas = await _context.Marca.ToListAsync();
+            var cars = await _context.Car.OrderBy(c => c.Id)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize).ToListAsync();
+
+            var totalItems = _context.Car.Count();
+            IndexViewModel model = new IndexViewModel();
+
+            #region LinQ
+
+            /*
+            var qs = (from car in cars
+                      join marca in marcas
+                      on car.MarcaId equals marca.Id
+                      select new CarViewModel
+                      {
+                          Id = car.Id,
+                          Marca = marca.Nombre,
+                          Descripcion = car.Descripcion,
+                          Modelo = car.Modelo,
+                          Precio = car.Precio,
+                          Kilometros = car.Kilometros,
+                          Estado = car.Estado,
+                          PathImg = car.PathImg
+
+                      }).ToList();
+            */
+
+            var ms = cars.Join(marcas, c => c.MarcaId,
+                m => m.Id,
+                (c, m) => new CarViewModel
+                {
+                    Id = c.Id,
+                    Marca = m.Nombre,
+                    Descripcion = c.Descripcion,
+                    Modelo = c.Modelo,
+                    Precio = c.Precio,
+                    Kilometros = c.Kilometros,
+                    Estado = c.Estado,
+                    PathImg = c.PathImg
+                }).ToList();
+
+            #endregion
+
+            model.Cars = ms;
+            model.CurrentPage = page;
+            model.TotalItems = totalItems;
+            model.SizePage = pageSize;
+
+            return View(model);
+        }
 
         // GET: Cars/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -99,14 +161,37 @@ namespace Concesionario.Controllers
                 return NotFound();
             }
 
+            /*
             var car = await _context.Car
                 .FirstOrDefaultAsync(m => m.Id == id);
+            */
+
+            var cars = await _context.Car.ToListAsync();
+            var marcas = await _context.Marca.ToListAsync();
+
+            var car = (from c in cars
+                       where c.Id == id
+                       join marca in marcas
+                       on c.MarcaId equals marca.Id
+                       select new CarViewModel
+                       {
+                           Id = c.Id,
+                           Marca = marca.Nombre,
+                           Descripcion = c.Descripcion,
+                           Modelo = c.Modelo,
+                           Precio = c.Precio,
+                           Kilometros = c.Kilometros,
+                           Estado = c.Estado,
+                           PathImg = c.PathImg
+
+                       }).ToList();
+
             if (car == null)
             {
                 return NotFound();
             }
 
-            return View(car);
+            return View(car[0]);
         }
 
         // GET: Cars/Create
