@@ -97,14 +97,14 @@ namespace Concesionario.Controllers
 
         #endregion
 
-        public async Task<IActionResult> Index(int page = 1)
+        public IActionResult Index(int page = 1)
         {
             var pageSize = 6; //cantidad de items por página
 
-            var marcas = await _context.Marca.ToListAsync();
-            var cars = await _context.Car.OrderBy(c => c.Id)
+            var cars = _context.Car.OrderBy(c => c.Id)
                 .Skip((page - 1) * pageSize)
-                .Take(pageSize).ToListAsync();
+                .Take(pageSize).ToList();
+            var marcas = _context.Marca.ToList();
 
             var totalItems = _context.Car.Count();
             IndexViewModel model = new IndexViewModel();
@@ -386,6 +386,8 @@ namespace Concesionario.Controllers
             return nombreArchivo;
         }
 
+        /*
+
         public async Task<IActionResult> Search(string searchString)
         {
             List<Car> myCars = await _context.Car.ToListAsync();
@@ -399,6 +401,40 @@ namespace Concesionario.Controllers
             }
 
             return View(auxCars);
+        }
+
+        */
+
+        public async Task<IActionResult> Search(string searchString)
+        {
+            var cars = await _context.Car.ToListAsync();
+            var marcas = await _context.Marca.ToListAsync();
+            List<CarViewModel> carSearch = new List<CarViewModel>();
+            string auxSearch;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                auxSearch = searchString.ToLower();
+
+                carSearch = (from car in cars
+                             join marca in marcas
+                             on car.MarcaId equals marca.Id
+                             where (marca.Nombre.ToString().ToLower() + " " + car.Descripcion.ToString().ToLower()).Contains(auxSearch)
+                             select new CarViewModel
+                             {
+                                 Id = car.Id,
+                                 Marca = marca.Nombre,
+                                 Descripcion = car.Descripcion,
+                                 Modelo = car.Modelo,
+                                 Precio = car.Precio,
+                                 Kilometros = car.Kilometros,
+                                 Estado = car.Estado,
+                                 PathImg = car.PathImg
+
+                             }).ToList();
+            }
+
+            return View(carSearch);
         }
 
     }

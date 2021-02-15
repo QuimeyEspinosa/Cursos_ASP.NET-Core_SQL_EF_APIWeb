@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Concesionario.Models.Car>
+﻿@model List<Concesionario.Models.CarViewModel>
 
 @{
     ViewData["Title"] = "Cars";
@@ -30,7 +30,7 @@
 
                 <!--Header-->
                 <div class="car-item-header">
-                    <h3>@item.Descripcion</h3>
+                    <h3>@item.Marca @item.Descripcion</h3>
                 </div>
 
                 <!--Description-->
