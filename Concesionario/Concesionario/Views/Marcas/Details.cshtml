@@ -1,0 +1,76 @@
+﻿@model List<Concesionario.Models.CarViewModel>
+
+@{
+    ViewData["Title"] = "Detalles marca";
+}
+
+<div class="top-container">
+    <div class="container">
+        <h1 class="header-container">Nuestras unidades disponibles</h1>
+        <form class="box" asp-controller="Cars" asp-action="Search">
+            <input type="text" name="SearchString" placeholder="Buscar..." />
+            @*<input type="submit" value="Buscar"/>*@
+        </form>
+    </div>
+</div>
+<div class="container">
+
+    <div class="item-container">
+
+        @foreach (var item in Model)
+        {
+            var pathImg = "~/img/" + item.PathImg;
+
+            <!--Item-->
+            <div class="car-item">
+
+                <!--Img-->
+                <img src="@pathImg" asp-append-version="true" />
+
+                <!--Header-->
+                <div class="car-item-header">
+                    <h3>@item.Marca @item.Descripcion</h3>
+                </div>
+
+                <!--Description-->
+                <div class="car-item-description">
+                    <ul>
+                        <li>
+                            <p> Modelo: @item.Modelo </p>
+                        </li>
+                        <li>
+                            <p>Precio: $@item.Precio </p>
+                        </li>
+                        <li>
+                            <p>Kilometros: $@item.Kilometros </p>
+                        </li>
+                        <li>
+                            <p> Estado: @item.Estado </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Footer-->
+                <div class="car-item-footer">
+                    <ul>
+                        <li>
+                            <a asp-controller="Cars" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Cars" asp-action="Details" asp-route-id="@item.Id">Detalles</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Cars" asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
+
+<div class="container">
+    <a asp-action="Index" class="btn-primary">Volver a la lista de marcas</a>
+</div>

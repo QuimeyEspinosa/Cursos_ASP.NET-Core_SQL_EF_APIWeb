@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Quimey\\source\\repos\\Concesionario\\Concesionario\\Concesionario.csproj": {}
+    "C:\\Users\\Qservices\\source\\repos\\Concesionario\\Concesionario\\Concesionario.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Quimey\\source\\repos\\Concesionario\\Concesionario\\Concesionario.csproj": {
+    "C:\\Users\\Qservices\\source\\repos\\Concesionario\\Concesionario\\Concesionario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Quimey\\source\\repos\\Concesionario\\Concesionario\\Concesionario.csproj",
+        "projectUniqueName": "C:\\Users\\Qservices\\source\\repos\\Concesionario\\Concesionario\\Concesionario.csproj",
         "projectName": "Concesionario",
-        "projectPath": "C:\\Users\\Quimey\\source\\repos\\Concesionario\\Concesionario\\Concesionario.csproj",
-        "packagesPath": "C:\\Users\\Quimey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Quimey\\source\\repos\\Concesionario\\Concesionario\\obj\\",
+        "projectPath": "C:\\Users\\Qservices\\source\\repos\\Concesionario\\Concesionario\\Concesionario.csproj",
+        "packagesPath": "C:\\Users\\Qservices\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Qservices\\source\\repos\\Concesionario\\Concesionario\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Quimey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Qservices\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,7 +42,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.2, )"
+              "version": "[5.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
@@ -52,11 +52,11 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.2, )"
+              "version": "[5.0.3, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[5.0.2, )"
             }
           },
           "imports": [
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

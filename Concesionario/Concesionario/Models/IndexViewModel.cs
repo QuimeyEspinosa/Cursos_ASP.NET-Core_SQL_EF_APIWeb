@@ -8,10 +8,12 @@ namespace Concesionario.Models
     public class IndexViewModel : Paginator
     {
         private List<CarViewModel> cars;
+        private List<Marca> marcas;
 
         public IndexViewModel()
         {
             cars = new List<CarViewModel>();
+            marcas = new List<Marca>();
         }
 
         public List<CarViewModel> Cars 
@@ -23,6 +25,18 @@ namespace Concesionario.Models
             set
             {
                 this.cars = value;
+            }
+        }
+
+        public List<Marca> Marcas
+        {
+            get
+            {
+                return this.marcas;
+            }
+            set
+            {
+                this.marcas = value;
             }
         }
     }

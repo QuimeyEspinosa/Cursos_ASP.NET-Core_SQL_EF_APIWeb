@@ -1,0 +1,60 @@
+﻿@model List<Concesionario.Models.Marca>
+
+@{
+    ViewData["Title"] = "Marcas";
+}
+<div class="top-container">
+    <div class="container">
+        <h1 class="header-container">Resultados de la búsqueda</h1>
+        <h3 class="header-container">Buscar marca</h3>
+        <form class="box" asp-controller="Marcas" asp-action="Search">
+            <input type="text" name="SearchString" placeholder="Buscar..." />
+            @*<input type="submit" value="Buscar"/>*@
+        </form>
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="item-container">
+
+        @foreach (var item in Model)
+        {
+            @*
+                var pathImg = "~/img/" + item.PathImg;
+            *@
+
+            <!--Item-->
+            <div class="marca-item">
+
+                @*
+                    <!--Img-->
+                    <img src="@pathImg" asp-append-version="true" />
+                *@
+                <!--Header-->
+                <div class="marca-item-header">
+                    <h3>@item.Nombre</h3>
+                </div>
+
+                <!--Footer-->
+                <div class="marca-item-footer">
+                    <ul>
+                        <li>
+                            <a asp-controller="Marcas" asp-action="Details" asp-route-id="@item.Id">Ver Vehículos</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Marcas" asp-action="Delete" asp-route-id="@item.Id">Eliminar Marca</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+<div class="container">
+    <p>
+        <a asp-action="Index" class="btn-primary">Volver</a>
+    </p>
+</div>

@@ -1,0 +1,48 @@
+﻿@model Concesionario.Models.Marca
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="top-container">
+    <div class="container">
+        <h1 class="header-container">Borrar publicación</h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <h3>¿Está seguro que desea borrar la marca? Se eliminaran los vehículos que la contengan</h3>
+
+    <div class="item-container">
+        @{
+            <!--Item-->
+            <div class="car-item-details">
+
+                <!--Header-->
+                <div class="marca-item-header">
+                    <h3>@Model.Nombre</h3>
+                </div>
+
+                <!--Description-->
+                <div class="car-item-description">
+                    <ul>
+                        <li>
+                            <p> Id: @Model.Id </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        }
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Borrar" class="btn-primary" />
+        </form>
+
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn-primary">Volver</a>
+    </div>
+</div>
